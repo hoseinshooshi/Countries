@@ -1,0 +1,15 @@
+.main_Container{
+    margin:0 15px;
+    height: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: #ececec;
+    flex-direction: column;
+    overflow: hidden;
+    outline: 1px solid rgba(33, 73, 108, 0.409);
+    outline-offset: 2px;
+}

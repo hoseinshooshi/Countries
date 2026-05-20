@@ -1,0 +1,71 @@
+.navbar{
+    padding: 15px;
+    backdrop-filter: opacity(70%);
+}
+.links_Container{
+    display: flex;
+    gap: 10px;
+    font-size: 8px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-right: 5px;
+}
+.not_Top_Of_The_Page{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 10px;
+    height: 60px;
+    outline: 1px solid rgb(33, 73, 108,0.3);
+    outline-offset: 3px;
+    width: 100%;
+    height: 100%;   
+    backdrop-filter: contrast(180%);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.secondery_Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 10px;
+    height: 60px;
+    outline: 1px solid rgb(33, 73, 108, 0.3);
+    outline-offset: 3px;
+    width: 100%;
+    height: 100%;   
+    backdrop-filter: contrast(180%);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: 0 4px 30px rgb(33, 73, 108, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.first_Span{
+    color: rgb(33, 73, 108);
+}
+.second_Span{
+    color: rgb(59, 108, 33);
+}
+.logo_Container{
+    font-size: 10px;
+    font-family: fantasy;
+    padding-left: 5px;
+}
+.links{
+    padding:4px;
+    border-radius: 3px;
+    transition: 300ms;
+    color: rgb(53, 53, 56);
+}
+.links:hover{
+    text-decoration: underline;
+    text-decoration-line: 1px;
+    text-decoration-color:rgb(33, 73, 108); 
+}

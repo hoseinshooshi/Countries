@@ -9,6 +9,9 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import Navbar from "./components/Navbar/Navbar";
+import { useEffect, useState } from "react";
+import { SelectedPage } from "./shared/types";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,7 +45,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+    const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home); 
+    const [topOfPage, setTopOfPage] = useState<boolean>(true)
+    useEffect(() => {
+      const handleScroll = () => {
+        if(window.screenY === 0) {
+          setTopOfPage(true);
+          setSelectedPage(SelectedPage.Home);
+        }  
+        if (window.scrollY !== 0) setTopOfPage(false)
+      }
+      window.addEventListener("scroll", handleScroll); 
+      return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+  return (
+    <div>
+      <Navbar topOfPage={topOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+      <Outlet />
+    </div>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

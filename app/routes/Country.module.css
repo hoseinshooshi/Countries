@@ -1,0 +1,142 @@
+.country_main_Container{
+    margin:0 15px;
+    height: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: #ececec;
+    flex-direction: column;
+    overflow: hidden;
+    outline: 1px solid rgba(33, 73, 108, 0.409);
+    outline-offset: 2px;
+}
+.main_Wrapper{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.Upper_Part{
+    display: flex;
+    align-items: center;
+    font-size: 8px;
+    margin: 10px 0;
+    gap: 3px;
+    color: rgb(33, 73, 108);
+    font-family: monospace;
+    transition: 300ms;
+    width: fit-content;
+    padding: 4px 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(59, 108, 33);
+}
+.Upper_Part:hover{
+    color: #ececec;
+    background-color: rgb(59, 108, 33);
+}
+.country_Name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgba(33, 73, 108);
+    margin-bottom: 6px;
+}
+.upper_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: max-content;
+}
+.country_flag{
+    flex-grow: calc(1.8/3);
+}
+.coatOfArm, .country_flag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 6px;
+    flex-direction: column;
+    color: rgba(33, 73, 108);
+}
+.meta_ContainerP{
+    display: flex;
+    flex-direction: column;
+    padding: 4px 7px 4px 7px; 
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.text_Container{
+    display: flex;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 5px;
+    margin-top: 5px;
+    padding: 4px;
+    color: rgb(33, 73, 108);
+    border: 1px solid rgb(33, 73, 108);
+    border-radius: 4px;
+    transition: 300ms;
+    align-items: center;
+    svg{
+        color: rgb(59, 108, 33);
+    }
+    span{
+        color: rgb(59, 108, 33);
+    }
+
+}
+.text_Container:hover{
+    background-color: rgb(33, 73, 108);
+    color: #ececec;
+    border: #ececec 1px solid;
+    svg{
+        stroke:rgb(222, 255, 204);
+    }
+    span{
+        color: rgb(222, 255, 204);
+    }
+}
+.map_Container{
+    display: flex;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 5px;
+    margin-top: 5px;
+    padding: 4px;
+    color: rgb(255, 121, 63);
+    border: 1px solid rgb(59, 108, 33);
+    border-radius: 4px;
+    transition: 300ms;
+    align-items: center;
+    svg{
+        color: rgb(255, 121, 63);
+    }
+    span{
+        color: rgb(255, 121, 63);
+    }
+    a{
+        text-decoration: underline;
+        color: rgb(59, 108, 33);
+    }
+
+}
+.map_Container:hover{
+    background-color: rgb(59, 108, 33);
+    color: #ececec;
+    border: #ececec 1px solid;
+    svg{
+        stroke:rgb(222, 255, 204);
+    }
+    span{
+        color: rgb(222, 255, 204);
+    }
+    a{
+        color: bisque;
+    }
+}
