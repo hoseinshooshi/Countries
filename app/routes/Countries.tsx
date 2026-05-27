@@ -9,6 +9,12 @@ export async function clientLoader({
   const data = await res.json();
   return data;
 }
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Countries - Where?" },
+    { name: "description", content: "Explore countries around the world" },
+  ];
+}
 const Countries = ({ loaderData }: Route.ComponentProps) => {
   const [search, setSearch] = useState<String>("");
   const [region, setRegion] = useState<String>("");
@@ -25,12 +31,13 @@ const Countries = ({ loaderData }: Route.ComponentProps) => {
         <div className={styles.input_Serch}> 
           <input type="text" placeholder='Search By Name...' value={search} onChange={(e)=>setSearch(e.target.value)}/>
         </div>
-        <div className={styles.select_Container}>
+        <div className={styles.radio_inputs}>
             {
               regions.map((region:any, key:any) => (
-                <div className={styles.buttons_div}>
-                  <button className={styles.region_button} value={region} onClick={region === "All Regions" ? ()=>setRegion("") : (e)=>setRegion(e.target.value)} >{region}</button>
-                </div>
+                <label className={styles.radio}>
+                  <input type="radio" name="radio" className={styles.region_button} value={region} onChange={region === "All Regions" ? ()=>setRegion("") : (e)=>setRegion(e.target.value)} />
+                  <span className={styles.name}>{region}</span>
+                </label>
               ))
             }
         </div>        

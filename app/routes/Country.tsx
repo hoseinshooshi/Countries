@@ -2,6 +2,7 @@ import React from 'react'
 import type { Route } from './+types/Country'
 import styles from "./Country.module.css"
 import { Link } from 'react-router';
+
 export async function clientLoader({
   params,
 }: Route.ClientLoaderArgs){
@@ -9,6 +10,14 @@ export async function clientLoader({
   const res = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   const data = await res.json();
   return data;
+}
+export function meta({loaderData}: Route.MetaArgs) {
+  const country = {
+    name: loaderData[0].name.common || "N/A"}
+  return [
+    { title: `${country.name}-Where?` },
+    { name: "description", content: `Learn about ${country.name}` },
+  ];
 }
 
 const Country = ({ loaderData }: Route.ComponentProps) => {

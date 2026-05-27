@@ -168,3 +168,113 @@ img{
     border-radius: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.radio_inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.radio_inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio_inputs .radio input {
+  display: none;
+}
+
+.radio_inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio_inputs .radio input:checked + .name {
+  background-color: #e6ffc4;
+  font-weight: 600;
+  color: #3b6c21;
+}
+
+/* Hover effect */
+.radio_inputs .radio:hover .name {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Animation */
+.radio_inputs .radio input:checked + .name {
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: select 0.3s ease;
+}
+
+@keyframes select {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Particles */
+.radio_inputs .radio input:checked + .name::before,
+.radio_inputs .radio input:checked + .name::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #3bf63b;
+  opacity: 0;
+  animation: particles 0.5s ease forwards;
+}
+
+.radio_inputs .radio input:checked + .name::before {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.radio_inputs .radio input:checked + .name::after {
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes particles {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(var(--direction));
+  }
+}
+
+.radio_inputs .radio input:checked + .name::before {
+  --direction: -10px;
+}
+
+.radio_inputs .radio input:checked + .name::after {
+  --direction: 10px;
+}
