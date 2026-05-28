@@ -1,6 +1,9 @@
+
 .navbar{
     padding: 15px;
     backdrop-filter: opacity(70%);
+    width: 100%;
+    max-width: 100vw;
 }
 .links_Container{
     display: flex;

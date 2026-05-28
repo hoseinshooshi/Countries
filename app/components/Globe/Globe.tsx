@@ -66,11 +66,6 @@ export default function Globe() {
         color: '#111',
       }}
     >
-      <h1 style={{ margin: 0 }}>COBE</h1>
-      <p style={{ margin: 0, opacity: 0.75 }}>
-        A lightweight WebGL globe lib
-      </p>
-
       <canvas
         ref={canvasRef}
         style={{

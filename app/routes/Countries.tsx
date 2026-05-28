@@ -16,8 +16,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 const Countries = ({ loaderData }: Route.ComponentProps) => {
-  const [search, setSearch] = useState<String>("");
-  const [region, setRegion] = useState<String>("");
+  const [search, setSearch] = useState<string>("");
+  const [region, setRegion] = useState<string>("");
   const filteredCountries =loaderData.filter((country:any) => {
     const matchesSearch = !search || country.name.common.toLowerCase().includes(search.toLowerCase())
     const regionSearch = !region || country.region.toLowerCase() === region.toLowerCase();
@@ -29,7 +29,19 @@ const Countries = ({ loaderData }: Route.ComponentProps) => {
     <div className={styles.main_Container}>
       <div className={styles.Upper_Part}>
         <div className={styles.input_Serch}> 
-          <input type="text" placeholder='Search By Name...' value={search} onChange={(e)=>setSearch(e.target.value)}/>
+          <form className={styles.form}>
+            <label htmlFor="search">
+              <input type="text" id='search' placeholder='Search By Name...' value={search} onChange={(e)=>setSearch(e.target.value)}/>
+              <div className={styles.icon}>
+                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.swap_on}>
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.swap_off}>
+                    <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </label>
+          </form>
         </div>
         <div className={styles.radio_inputs}>
             {

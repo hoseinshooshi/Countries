@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Route } from './+types/Country'
 import styles from "./Country.module.css"
 import { Link } from 'react-router';
